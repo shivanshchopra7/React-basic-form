@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './style.css'; // Import CSS file
 
-// Constants
 
 // Reusable Select Component
 function SelectGroup({ heading, id, options, disabled, onChange, selectedOption }) {
@@ -24,9 +23,9 @@ function Question({ question, onChange }) {
     <div>
       <p>{question}</p>
       <form>
-        <label htmlFor="yes">Yes</label>
+        <label className="answer-label" htmlFor="yes">Yes</label>
         <input type="radio" id="yes" name="answer" value="yes" onChange={onChange}  />
-        <label htmlFor="no">No</label>
+        <label className="answer-label" htmlFor="no">No</label>
         <input type="radio" id="no" name="answer" value="no" onChange={onChange} />
       </form>
     </div>
@@ -143,8 +142,8 @@ function App() {
         />
       </div>
       {firstPhaseCompleted && (
-        <div>
-          <h3>Please Answer Questions</h3>
+        <div className="question-container">
+          <h3 >Please Answer Questions</h3>
           <Question question="Are you experiencing any numbness or tingling sensation or radiating pain?" onChange={(e) => handleInputChange("answer1", e.target.value)} />
           <Question question="Have you experienced any recent trauma or injury to your spine?" onChange={(e) => handleInputChange("answer2", e.target.value)} />
           <Question question="Are you able to walk?" onChange={(e) => handleInputChange("answer3", e.target.value)} />
