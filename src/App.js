@@ -47,11 +47,26 @@ function App() {
   const [allQuestionsAnswered, setAllQuestionsAnswered] = useState(false); // New state to track completion of second phase
 
   const handleInputChange = (key, value) => {
+    // Reset other options if the selectedJoint is changed
+    if (key === 'selectedJoint') {
+      setFormData(prevState => ({
+        selectedJoint: value,
+        selectedSide: "", // Reset selected side
+        selectedInjury: "", // Reset selected injury
+        answer1: "", // Reset answer 1
+        answer2: "", // Reset answer 2
+        answer3: "" // Reset answer 3
+      }));
+      setFirstPhaseCompleted(false); // Reset first phase completion status
+      setSecondPhaseCompleted(false); // Reset second phase completion status
+      return; // Exit the function
+    }
+  
     setFormData(prevState => ({
       ...prevState,
       [key]: value
     }));
-
+  
     if (key === 'selectedInjury' && !firstPhaseCompleted) {
       setFirstPhaseCompleted(true);
       setStep(step + 1);
@@ -64,6 +79,7 @@ function App() {
       }
     }
   };
+  
 
   useEffect(() => {
     let progressHeight = 0;
@@ -152,9 +168,10 @@ function App() {
           <Question question="Are you able to walk?" onChange={(e) => handleInputChange("answer3", e.target.value)} />
         </div>
       )}
-      {allQuestionsAnswered && (
-        <button id="submitBtn" onClick={() => setStep(step)}>Submit</button>
-      )}
+    {secondPhaseCompleted && (
+  <button id="submitBtn" onClick={() => setStep(step)}>Submit</button>
+)}
+
     </main>
   );
 }
