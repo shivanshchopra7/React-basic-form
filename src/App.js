@@ -94,7 +94,8 @@ function App() {
         </div>
       </div>
       <h1>Please Enter Patient Details</h1>
-      <div id="list">
+      <div id="list" className='list-container'>
+    
         <SelectGroup
           heading="Select Joint"
           id="option1"
@@ -112,7 +113,9 @@ function App() {
           disabled={false}
           onChange={(e) => handleInputChange("selectedJoint", e.target.value)}
           selectedOption={formData.selectedJoint}
+          style={{ marginTop: '200px' }}
         />
+        
         <SelectGroup
           heading="Select Side"
           id="option2"
