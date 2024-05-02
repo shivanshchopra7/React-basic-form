@@ -1,0 +1,64 @@
+body {
+    margin: 20px;
+}
+
+#list {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    flex: 1;
+    margin-right: 20px; /* Adjust spacing between groups */
+}
+
+/* Style <p> tags */
+.input-group p {
+    margin: 0;
+}
+
+/* Style <select> elements */
+.input-group select {
+    width: 100%; /* Make select elements equal width */
+    margin-top: 5px;
+}
+
+.Heading {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.progress-bar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align progress bar to the left */
+    position: fixed;
+    margin-top: 80px;
+    top: 0;
+    left: 0;
+    height: 50%; /* Set height to fill the screen */
+    padding: 10px;
+}
+
+.progress-bar {
+    width: 5px; /* Adjust width as needed */
+    height: 100%;
+    background-color: lightgray;
+    border-radius: 10px;
+    margin-right: 20px; /* Adjust spacing between progress bar and content */
+    position: relative;
+}
+
+.progress {
+    width: 100%;
+    background-color: green;
+    border-radius: 10px;
+  
+}
+
+#submitBtn {
+    margin-top: 20px;
+  }
+
+
+  
