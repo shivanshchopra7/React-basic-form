@@ -68,10 +68,10 @@ function App() {
   useEffect(() => {
     let progressHeight = 0;
     if (firstPhaseCompleted) {
-      progressHeight += 50;
+      progressHeight += 40;
     }
     if (secondPhaseCompleted) {
-      progressHeight += 50;
+      progressHeight += 60;
     }
     document.querySelector('.progress').style.height = `${progressHeight}%`;
     
@@ -93,7 +93,7 @@ function App() {
           <div className="progress"></div>
         </div>
       </div>
-      <h1>Please Enter Patient Details</h1>
+      <h3 className='top-heading'>Please Enter Patient Details</h3>
       <div id="list" className='list-container'>
     
         <SelectGroup
