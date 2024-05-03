@@ -59,7 +59,7 @@ function App() {
       }));
       setFirstPhaseCompleted(false); // Reset first phase completion status
       setSecondPhaseCompleted(false); // Reset second phase completion status
-      return; // Exit the function
+      return; 
     }
   
     setFormData(prevState => ({
@@ -78,7 +78,7 @@ function App() {
         setSecondPhaseCompleted(true);
       }
     }
-  };
+  }
   
 
   useEffect(() => {
